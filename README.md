@@ -62,7 +62,3 @@ This project reinforced several Python idioms and design patterns:
 - Replace the CLI interface with a graphical version (planned as a future iteration)
 - Add a single-player mode against a simple AI opponent
 - Add a "play again" loop instead of exiting after one game
-
-## Author
-
-[Your Name] — Part of a 10-project Python portfolio series.
