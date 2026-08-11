@@ -47,3 +47,25 @@ def check_winner(board, mark):
 # Check if the board is full (call this only after check_winner)
 def check_draw(board):
     return all(cell != " " for row in board for cell in row)
+
+# Return the list of (row, col) cells forming the winning line for a mark,
+# or None if that mark hasn't won.
+def get_winning_cells(board, mark):
+    # Check rows
+    for r in range(3):
+        if all(board[r][c] == mark for c in range(3)):
+            return [(r, 0), (r, 1), (r, 2)]
+ 
+    # Check columns
+    for c in range(3):
+        if all(board[r][c] == mark for r in range(3)):
+            return [(0, c), (1, c), (2, c)]
+ 
+    # Check diagonals
+    if all(board[i][i] == mark for i in range(3)):
+        return [(0, 0), (1, 1), (2, 2)]
+ 
+    if all(board[i][2 - i] == mark for i in range(3)):
+        return [(0, 2), (1, 1), (2, 0)]
+
+    return None
